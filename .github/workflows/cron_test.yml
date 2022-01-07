@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Daily Cron Security Check
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  schedule:
+    - cron: '05 * * * *'
+jobs:
+   daily-checkmarx-security-check:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
+
+     - name: Extract branch name
+       shell: bash
+       run: echo "##[set-output name=branch;]${GITHUB_REF#refs/heads/}"
+       id: extract_branch
+
+     - name: Checkmarx CxFlow Action
+       uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.1
+
+     - name: Print branch name
+       run: |
+         echo branch_name:${{ steps.extract_branch.outputs.branch }}
+         echo $GITHUB_SHA
