@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Create integration folder
-      run: mkdir -p ./integration
+      run: | 
+        mkdir -p ./integration
+        cp src/css/ ./integration
