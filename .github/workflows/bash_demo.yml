@@ -6,11 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Basg file execution demo
-      run: mkdir -p ./artifacts/${{ github.repository }}
-      
-    - name: Create Zip File
-      uses: montudor/action-zip@v0.1.0
-      with:
-        args: zip -r ./artifacts/${{ github.repository }}/${{ github.sha }}.zip ./src
+    - name: Change directory
+      run: cd ./src/css/  
+  
