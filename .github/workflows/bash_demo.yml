@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Basg file execution demo
-      run: bash scripts/pipeline/release.sh
+      run: bash scripts/pipeline/demo.sh
