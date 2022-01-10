@@ -19,4 +19,7 @@ jobs:
     - name: GZip file
       run: |
         cd src/js && gzip --force integration.tar -9
+    - name: Display files
+      run: |
+        ls src/js
   
