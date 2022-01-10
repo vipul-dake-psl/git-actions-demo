@@ -10,4 +10,4 @@ jobs:
     - name: Create integration folder
       run: | 
         mkdir -p ./integration
-        cp src/css/ ./integration
+        cp -r src/css/ ./integration
