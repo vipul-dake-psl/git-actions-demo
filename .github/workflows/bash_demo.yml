@@ -8,6 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Create integration folder
-      run: | 
-        cd src/css && tar cf integration.tar style.scss
-        cd src/js
+      run: cd src/css && tar cf integration.tar style.scss
+           cd src/js
