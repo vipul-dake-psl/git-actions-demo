@@ -9,4 +9,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Basg file execution demo
       run: |
-        mkdir -p myNewFolder/myNewSubFolder
+        mkdir mkdir -p ./artifacts_demo/${{ github.repository }}
