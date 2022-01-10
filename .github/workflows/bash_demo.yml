@@ -11,3 +11,4 @@ jobs:
       run: | 
         mkdir -p ./integration
         cp -r src/css/ ./integration
+        cd src/css/
