@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Change directory
-      run: cd ./src/css/  
+      run: cd src/css/  
   
