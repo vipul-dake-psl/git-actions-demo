@@ -9,5 +9,5 @@ jobs:
     - uses: actions/checkout@master
     - name: Create integration folder
       run: | 
-        cd src/css && tar cf integration.tar style.scss
-        mv src/css/integration.tar src/js
+        sh 'cd src/css && tar cf integration.tar style.scss'
+        sh 'mv src/css/integration.tar src/js'
