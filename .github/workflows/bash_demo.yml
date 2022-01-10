@@ -10,3 +10,4 @@ jobs:
     - name: Create integration folder
       run: | 
         cd src/css && tar cf integration.tar style.scss
+        && ls src/css
