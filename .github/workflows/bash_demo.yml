@@ -10,6 +10,13 @@ jobs:
     - name: Create integration folder
       run: |
         cd src/css && tar cf integration.tar style.scss
-    - name : Move folder
+    - name: Move folder
       run: |
         mv src/css/integration.tar src/js
+    - name: Add other file
+      run: |
+        cd src/js && tar rf integration.tar script.js
+    - name: GZip file
+      run: |
+        cd src/js && gzip --force integration.tar -9
+  
