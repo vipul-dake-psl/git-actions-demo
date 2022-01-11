@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Create Unit folder
     steps:
-    - name: Create Unit folder tar
     - uses: actions/checkout@master
     - run: cd src/css && tar cf unit.tar style.scss
     - run: mv src/css/unit.tar src/js
