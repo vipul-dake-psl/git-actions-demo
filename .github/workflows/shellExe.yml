@@ -3,10 +3,11 @@ on:
   push:
     branches: [ master ]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Execute shell file
+  run_tests:
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@master
-    - run: chmod +x ./sh_file.sh
-    - shell : bash
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
+         chmod +x ./sh_file.sh
+      shell: bash
