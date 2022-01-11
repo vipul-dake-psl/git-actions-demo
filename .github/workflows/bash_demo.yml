@@ -1,4 +1,4 @@
-name: Bash Demo
+name: Zip file Demo
 on:
   push:
     branches: [ master ]
@@ -8,18 +8,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Create integration folder
-      run: |
-        cd src/css && tar cf integration.tar style.scss
-    - name: Move folder
-      run: |
-        mv src/css/integration.tar src/js
-    - name: Add other file
-      run: |
-        cd src/js && tar rf integration.tar script.js
-    - name: GZip file
-      run: |
-        cd src/js && gzip --force integration.tar -9
-    - name: Display files
-      run: |
-        ls src/js
+    - run: cd src/css && tar cf integration.tar style.scss
+    - run: mv src/css/integration.tar src/js
+    - run: cd src/js && tar rf integration.tar script.js
+    - run: cd src/js && gzip --force integration.tar -9
+    - run: ls src/js
+     
+        
+    
   
