@@ -8,4 +8,4 @@ jobs:
     name: Execute shell file
     steps:
     - uses: actions/checkout@master
-    - run: ./sh_file.sh
+    - run: chmod +x ./sh_file.sh
