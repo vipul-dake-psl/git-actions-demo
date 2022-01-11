@@ -9,3 +9,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run script file
       run: bash ./sh_file.sh
+    - run : java --version
