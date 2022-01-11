@@ -8,6 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
-      run: |
-         chmod +x ./sh_file.sh
-      shell: bash
+      run: bash chmod +x ./sh_file.sh
