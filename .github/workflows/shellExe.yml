@@ -9,3 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: chmod +x ./sh_file.sh
+    - shell : bash
