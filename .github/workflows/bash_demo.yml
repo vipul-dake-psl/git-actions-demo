@@ -5,9 +5,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Create integration folder
     steps:
     - uses: actions/checkout@master
-    - name: Create integration folder
     - run: cd src/css && tar cf integration.tar style.scss
     - run: mv src/css/integration.tar src/js
     - run: cd src/js && tar rf integration.tar script.js
