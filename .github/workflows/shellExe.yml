@@ -1,0 +1,11 @@
+name: Execute shell file
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Execute shell file
+    steps:
+    - uses: actions/checkout@master
+    - run: sh_file.sh
