@@ -1,0 +1,21 @@
+name: Using Amazon Action
+on:
+  push:
+    branches: [ master ]
+jobs:
+  run_tests:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - run: cd src/css && tar cf unit.tar style.scss
+    - run: mv src/css/unit.tar src/js
+    - run: cd src/js && find . "*.js" | xargs tar rf unit.tar
+    - run: cd src/js && gzip --force unit.tar -9
+    - name: Configure AWS Credentials
+    - uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Copy files to S3 using AWS CLI
+      run: |
+        aws s3 cp --region ap-south-1 --acl bucket-owner-full-control ./src/layoutsscreenshot.png s3://$bucket_name/fol10
