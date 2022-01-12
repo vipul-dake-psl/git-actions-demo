@@ -18,7 +18,7 @@ jobs:
     - run: touch ~/.aws/credentials
        aws_access_key_id = 'AKIAXGKI2BMQ3RTCF2MJ'
        aws_secret_access_key = ''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'' ~/.aws/credentials
-       aws s3 cp ./src/js/unit.tar.gz s3://test-bucket-demo-vi-dk/fol1/test-results/arn:aws:s3:::test-bucket-demo-vi-dk/fol/2/my \
-       --region ap-south-1
+       aws s3 cp ./src/js/unit.tar.gz s3://test-bucket-demo-vi-dk/fol1/test-results/arn:aws:s3:::test-bucket-demo-vi-dk \
+       --region ap-south-1 $*
     - run: rm -rf ~/.aws
 
