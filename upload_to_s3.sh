@@ -47,7 +47,7 @@ mkdir -p ~/.aws
 
 touch ~/.aws/credentials
 
-# echo "[default]
+echo "[default]
 aws_access_key_id = $aws_access_key
 aws_secret_access_key = $aws_access_secret" > ~/.aws/credentials
 
