@@ -15,9 +15,9 @@ jobs:
     - run: ls src/js
     - run: pip install --quiet --no-cache-dir awscli
     - run: mkdir -p ~/.aws
-    - run: touch ~/.aws/credentials
+       touch ~/.aws/credentials
        aws_access_key_id = 'AKIAXGKI2BMQ3RTCF2MJ'
        aws_secret_access_key = ''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'' ~/.aws/credentials
        aws s3 cp ./src/js/unit.tar.gz s3://test-bucket-demo-vi-dk/unit.tar.gz
-    - run: rm -rf ~/.aws
+       rm -rf ~/.aws
 
