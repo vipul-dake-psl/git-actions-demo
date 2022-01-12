@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
+    - run: cd src/css && tar cf unit.tar style.scss
+    - run: mv src/css/unit.tar src/js
+    - run: cd src/js && find . "*.js" | xargs tar rf unit.tar
+    - run: cd src/js && gzip --force unit.tar -9
     - name: Run script file demo
-      run: bash upload_to_s3.sh ./src/index.html ${{secrets.AWS_ACCESS_KEY_ID}} ${{secrets.AWS_SECRET_ACCESS_KEY}} ${{secrets.AWS_S3_BUCKET}} ${{secrets.S3_KEY}}
+      run: bash upload_to_s3.sh ./src/js/unit.tar.gz ${{secrets.AWS_ACCESS_KEY_ID}} ${{secrets.AWS_SECRET_ACCESS_KEY}} ${{secrets.AWS_S3_BUCKET}} ${{secrets.S3_KEY}}
 
