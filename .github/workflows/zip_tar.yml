@@ -20,7 +20,7 @@ jobs:
       env:
         FILE: ./src/js/unit.tar.gz
         AWS_REGION: 'ap-south-1'
-        S3_BUCKET: 'test-bucket-demo-vi-dk'
+        S3_BUCKET: 'test-bucket-demo-vi-dk/fol1/test-results'
         S3_KEY: 'arn:aws:s3:::test-bucket-demo-vi-dk'
         AWS_ACCESS_KEY_ID: 'AKIAXGKI2BMQ3RTCF2MJ'
         AWS_SECRET_ACCESS_KEY: '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'
