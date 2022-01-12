@@ -51,7 +51,7 @@ echo "[default]
 aws_access_key_id = $aws_access_key
 aws_secret_access_key = $aws_access_secret" > ~/.aws/credentials
 
-aws s3 cp $local_path s3://$bucket_name/$bucket_key \
-  --region 'us-east-2' $*
+#aws s3 cp $local_path s3://$bucket_name/$bucket_key \
+#  --region 'us-east-2' $*
 
 rm -rf ~/.aws
