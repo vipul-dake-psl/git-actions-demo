@@ -12,5 +12,5 @@ jobs:
     - run: cd src/js && find . "*.js" | xargs tar rf unit.tar
     - run: cd src/js && gzip --force unit.tar -9
     - name: Run script file demo
-      run: bash upload_to_s3.sh unit.tar.gz fol8/test src/js/unit.tar.gz ${{secrets.AWS_ACCESS_KEY_ID}} ${{secrets.AWS_SECRET_ACCESS_KEY}} ${{secrets.AWS_S3_BUCKET}} ${{secrets.S3_KEY}}
+      run: bash upload_to_s3.sh unit.tar.gz src/js/unit.tar.gz ${{secrets.AWS_ACCESS_KEY_ID}} ${{secrets.AWS_SECRET_ACCESS_KEY}} ${{secrets.AWS_S3_BUCKET}} ${{secrets.S3_KEY}}
 
