@@ -1,0 +1,16 @@
+name: Upload zip using marketplace
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Upload file using CLI
+    steps:
+    - uses: actions/checkout@master
+    - run: cd src/css && tar cf unit.tar style.scss
+    - run: mv src/css/unit.tar src/js
+    - run: cd src/js && find . "*.js" | xargs tar rf unit.tar
+    - run: cd src/js && gzip --force unit.tar -9
+    - run: ls src/js
+    - run: pip install --quiet --no-cache-dir awscli
