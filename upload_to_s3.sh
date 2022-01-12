@@ -6,16 +6,20 @@ set -e
 
 set -e
 
-local_path=$1
-aws_access_key=$2
-aws_access_secret=$3
-bucket_name=$4
-bucket_key=$5
+file_name=$1
+local_path=$2
+dest_path=$3
+aws_access_key=$4
+aws_access_secret=$5
+bucket_name=$6
+bucket_key=$7
 
 
 
 echo "Echo from upload_to_s3.sh file"
+echo $file_name
 echo $local_path
+echo $dest_path
 echo $aws_access_key
 echo $aws_access_secret
 echo $bucket_name
@@ -56,7 +60,7 @@ aws_secret_access_key = $aws_access_secret" > ~/.aws/credentials
 #aws s3 cp $local_path s3://$bucket_name/$bucket_key \
 #  --region 'us-east-2' $*
 
-aws s3 cp --region ap-south-1 --acl bucket-owner-full-control $local_path s3://$bucket_name/fol6
+aws s3 cp --region ap-south-1 --acl bucket-owner-full-control $local_path s3://$bucket_name/dest_path/file_name
 
 
 rm -rf ~/.aws
