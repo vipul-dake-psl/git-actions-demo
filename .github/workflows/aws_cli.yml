@@ -17,4 +17,4 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - run: |
-        aws s3 cp --region ap-south-1 --acl bucket-owner-full-control ./src/layoutsscreenshot.png s3://$bucket_name/fol10
+        aws s3 cp --region ap-south-1 --acl bucket-owner-full-control ./src/layoutsscreenshot.png s3://test-bucket-demo-vi-dk/fol10
