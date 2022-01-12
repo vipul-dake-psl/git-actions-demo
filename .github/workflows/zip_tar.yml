@@ -18,7 +18,7 @@ jobs:
       with:
         args: --acl bucket-owner-full-control
       env:
-        FILE: ./src/js/unit.tar.gz
+        FILE: "./src/js/unit.tar.gz"
         AWS_REGION: 'ap-south-1'
         S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}/fol2/test-results-2
         S3_KEY: ${{ secrets.S3_KEY }}
