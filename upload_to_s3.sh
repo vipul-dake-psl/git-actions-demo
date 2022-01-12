@@ -60,7 +60,7 @@ aws_secret_access_key = $aws_access_secret" > ~/.aws/credentials
 #aws s3 cp $local_path s3://$bucket_name/$bucket_key \
 #  --region 'us-east-2' $*
 
-aws s3 cp --region ap-south-1 --acl bucket-owner-full-control $local_path s3://$bucket_name/fol8/test/$file_name
+aws s3 cp --region ap-south-1 --acl bucket-owner-full-control $local_path s3://$bucket_name/$file_name
 
 
 rm -rf ~/.aws
