@@ -6,7 +6,20 @@ set -e
 
 set -e
 
+local_path=$1
+aws_access_key=$2
+aws_access_secret=$3
+bucket_name=$4
+bucket_key=$5
+
+
+
 echo "Echo from upload_to_s3.sh file"
+echo $local_path
+echo $aws_access_key
+echo $aws_access_secret
+echo $bucket_name
+echo $bucket_key
 
 # if [ -z "$S3_BUCKET" ]; then
 #   echo "S3_BUCKET is not set. Quitting."
