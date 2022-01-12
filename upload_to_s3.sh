@@ -43,15 +43,15 @@ echo $bucket_key
 #   AWS_REGION="us-east-1"
 # fi
 
-# mkdir -p ~/.aws
+mkdir -p ~/.aws
 
-# touch ~/.aws/credentials
+touch ~/.aws/credentials
 
 # echo "[default]
-#aws_access_key_id = ${AWS_ACCESS_KEY_ID}
-#aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}" > ~/.aws/credentials
+aws_access_key_id = $aws_access_key
+aws_secret_access_key = $aws_access_secret" > ~/.aws/credentials
 
-#aws s3 cp ${FILE} s3://${S3_BUCKET}/${S3_KEY} \
-#  --region ${AWS_REGION} $*
+aws s3 cp $local_path s3://$bucket_name/$bucket_key \
+  --region 'us-east-2' $*
 
-#rm -rf ~/.aws
+rm -rf ~/.aws
