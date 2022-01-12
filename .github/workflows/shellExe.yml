@@ -8,5 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run script file demo
-      run: bash upload_to_s3.sh ${{secrets.AWS_Bucket_Name}} "folder1/myapp.zip" ${{secrets.AWS_ACCESS_KEY_ID}} ${{secrets.AWS_SECRET_ACCESS_KEY}} ${{secrets.AWS_S3_BUCKET}} ${{secrets.S3_KEY}}
+      run: bash upload_to_s3.sh "folder1/myapp.zip" ${{secrets.AWS_ACCESS_KEY_ID}} ${{secrets.AWS_SECRET_ACCESS_KEY}} ${{secrets.AWS_S3_BUCKET}} ${{secrets.S3_KEY}}
 
