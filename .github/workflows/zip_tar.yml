@@ -1,4 +1,4 @@
-name: Zip Tar file Demo
+name: Upload zip using marketplace
 on:
   push:
     branches: [ master ]
