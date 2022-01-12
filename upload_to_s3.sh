@@ -8,18 +8,16 @@ set -e
 
 file_name=$1
 local_path=$2
-dest_path=$3
-aws_access_key=$4
-aws_access_secret=$5
-bucket_name=$6
-bucket_key=$7
+aws_access_key=$3
+aws_access_secret=$4
+bucket_name=$5
+bucket_key=$6
 
 
 
 echo "Echo from upload_to_s3.sh file"
 echo $file_name
 echo $local_path
-echo $dest_path
 echo $aws_access_key
 echo $aws_access_secret
 echo $bucket_name
