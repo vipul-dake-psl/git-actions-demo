@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
-    - name: Run script file
+    - name: Run script file demo
       run: bash upload_to_s3.sh
 
