@@ -7,14 +7,16 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
-    - run: cd src/css && tar cf unit.tar style.scss
-    - run: mv src/css/unit.tar src/js
-    - run: cd src/js && find . "*.js" | xargs tar rf unit.tar
-    - run: cd src/js && gzip --force unit.tar -9
-    - uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-region: ap-south-1
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    - run: |
-        aws s3 cp --region ap-south-1 --acl bucket-owner-full-control src/js/unit.tar.gz s3://test-bucket-demo-vi-dk/test/out/in/unit.tar.gz
+    - name: Zipping up the resources
+      run: cd src/css && tar cf unit.tar style.scss
+           mv src/css/unit.tar src/js
+           cd src/js && find . "*.js" | xargs tar rf unit.tar
+           cd src/js && gzip --force unit.tar -9
+           ls src/js
+    #- uses: aws-actions/configure-aws-credentials@v1
+    #  with:
+    #    aws-region: ap-south-1
+    #    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #- run: |
+    #    aws s3 cp --region ap-south-1 --acl bucket-owner-full-control src/js/unit.tar.gz s3://test-bucket-demo-vi-dk/test/out/in/unit.tar.gz
