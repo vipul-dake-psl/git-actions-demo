@@ -11,9 +11,9 @@ jobs:
       run: >
        cd src/css && tar cf unit.tar style.scss
        mv src/css/unit.tar src/js
-       #run: cd src/js && find . "*.js" | xargs tar rf unit.tar
-       #run: cd src/js && gzip --force unit.tar -9
-       #run: ls src/js
+       src/js && find . "*.js" | xargs tar rf unit.tar
+       cd src/js && gzip --force unit.tar -9
+       ls src/js
     #- uses: aws-actions/configure-aws-credentials@v1
     #  with:
     #    aws-region: ap-south-1
