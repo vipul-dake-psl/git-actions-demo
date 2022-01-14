@@ -9,7 +9,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Zipping up the resources
       run: |
-       cd src/css && tar cf unit.tar style.scss && mv src/css/unit.tar src/js
+       cd src/css && tar cf unit.tar style.scss
+    - run: mv src/css/unit.tar src/js
        #run: cd src/js && find . "*.js" | xargs tar rf unit.tar
        #run: cd src/js && gzip --force unit.tar -9
        #run: ls src/js
